@@ -38,7 +38,7 @@ HUGGINGFACE_API_KEY.txt
 !data_3class_backup.csv
 
 # Machine Learning Models
-*.pkl
+# *.pkl
 *.pickle
 *.joblib
 *.h5
