@@ -460,6 +460,7 @@ stock_choice = st.sidebar.selectbox("Stock", options=['AP', 'AREIT', 'CNVRG', 'D
 # Sidebar controls
 checkbox = st.sidebar.checkbox("Display the Dataset")
 feature_selection = st.sidebar.multiselect(label="Features to plot", options=numeric_columns)
+shap_checkbox = st.sidebar.checkbox("Show SHAP Analysis")
 
 # Initialize session state for prediction results
 if 'prediction_data' not in st.session_state:
@@ -479,10 +480,35 @@ if 'sentiment_scores' not in st.session_state:
 if 'uploaded_pdf_name' not in st.session_state:
     st.session_state.uploaded_pdf_name = None
 
+# SHAP Analysis in Sidebar
+if shap_checkbox:
+    st.sidebar.divider()
+    st.sidebar.subheader("🔍 SHAP Analysis")
+    
+    # Check if SHAP files exist
+    shap_img_path = Path('shapley.png')
+    shap_md_path = Path('shapley.md')
+    
+    if shap_img_path.exists():
+        # Display SHAP plot in sidebar
+        st.sidebar.image('shapley.png', caption='SHAP Feature Importance', 
+                use_container_width=True)
+        
+        if shap_md_path.exists():
+            # Load and display SHAP explanation markdown
+            with open(shap_md_path, 'r', encoding='utf-8') as f:
+                shap_text = f.read()
+            
+            # Display the SHAP analysis in an expander to save space
+            with st.sidebar.expander("📊 Detailed SHAP Analysis"):
+                st.markdown(shap_text)
+    else:
+        st.sidebar.warning("⚠️ SHAP files not found")
+
 st.title("📊 Stock Dashboard")
 
 # Create tabs
-tab1, tab2, tab3 = st.tabs(["📈 Prediction & Plots", "🤖 AI Analysis", "🔍 SHAP Analysis"])
+tab1, tab2 = st.tabs(["📈 Prediction & Plots", "🤖 AI Analysis"])
 
 # ==================== TAB 1: PREDICTION & PLOTS ====================
 with tab1:
@@ -873,34 +899,4 @@ with tab2:
     else:
         st.info("👈 Please submit a prediction in the 'Prediction & Plots' tab first to generate AI analysis.")
 
-# ==================== TAB 3: SHAP ANALYSIS ====================
-with tab3:
-    # st.header("🔍 SHAP Feature Importance Analysis")
-    st.subheader("Understanding Model Predictions")
-
-    # Check if SHAP files exist
-    shap_img_path = Path('shapley.png')
-    shap_md_path = Path('shapley.md')
-    
-    if shap_img_path.exists() and shap_md_path.exists():
-        # Display SHAP plot
-        st.image('shapley.png', caption='SHAP Feature Importance - Binary Classification (Down/Up)', 
-                use_container_width=True)
-        
-        st.divider()
-        
-        # Load and display SHAP explanation markdown
-        with open(shap_md_path, 'r', encoding='utf-8') as f:
-            shap_text = f.read()
-        
-        # Display the SHAP analysis
-        st.markdown("### 📊 Detailed Analysis")
-        st.markdown(shap_text)
-        
-    else:
-        st.warning("⚠️ SHAP analysis files (shapley.png, shapley.md) not found. Please ensure they are in the project directory.")
-        
-        if not shap_img_path.exists():
-            st.info("Missing: shapley.png")
-        if not shap_md_path.exists():
-            st.info("Missing: shapley.md")
+# Tab 3 removed - SHAP Analysis moved to sidebar checkbox
