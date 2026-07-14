@@ -132,16 +132,12 @@ If you use this repository, please cite it as follows:
 Joshua P. Rosell. (2026). *FinSight: A Hybrid Technical and Sentiment Approach to PSEi Stock Direction Prediction Using FinBERT and Machine Learning Models*. GitHub Repository. https://github.com/joshuarosell/psei-binary
 
 ### BibTeX
-'''bibtex
+```bibtex
 @misc{rosell_2026,
   author = {Joshua P. Rosell},
   title = {FinSight: A Hybrid Technical and Sentiment Approach to PSEi Stock Direction Prediction Using FinBERT and Machine Learning Models},
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub Repository},
-  howpublished = {\url{https://github.com/joshuarosell/psei-binary}}
-}
-'''
-
-
-
+  howpublished \(= {\url{https://github.com/joshuarosell/psei-binary}} \)}
+```
