@@ -124,4 +124,23 @@ This project is part of an AI Capstone project.
 ## Demo
 You can view the live interactive dashboard here: [Live Streamlit App](https://pseibinary.streamlit.app/)
 
+## Citation
+
+If you use this repository, please cite it as follows:
+
+### APA
+Joshua P. Rosell. (2026). *FinSight: A Hybrid Technical and Sentiment Approach to PSEi Stock Direction Prediction Using FinBERT and Machine Learning Models*. GitHub Repository. https://github.com/joshuarosell/psei-binary
+
+### BibTeX
+```bibtex
+@misc{rosell_2026,
+  author = {Joshua P. Rosell},
+  title = {FinSight: A Hybrid Technical and Sentiment Approach to PSEi Stock Direction Prediction Using FinBERT and Machine Learning Models},
+  year = {2026},
+  publisher = {GitHub},
+  journal = {GitHub Repository},
+  howpublished \(= {\url{https://github.com/joshuarosell/psei-binary}} \)}
+```
+
+
 
