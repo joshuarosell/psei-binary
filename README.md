@@ -120,3 +120,8 @@ This project is part of an AI Capstone project.
 - API keys are excluded from version control for security
 - Model files (.pkl, .joblib) should be generated or obtained separately
 - Ensure data files are present before running the dashboard
+
+## Demo
+You can view the live interactive dashboard here: [Live Streamlit App]https://pseibinary.streamlit.app/
+
+
