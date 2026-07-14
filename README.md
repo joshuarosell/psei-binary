@@ -139,5 +139,6 @@ Joshua P. Rosell. (2026). *FinSight: A Hybrid Technical and Sentiment Approach t
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub Repository},
-  howpublished = {\url{https://github.com/joshuarosell/psei-binary}} }
+  howpublished = {\url{https://github.com/joshuarosell/psei-binary}}
+}
 ```
