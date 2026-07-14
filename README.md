@@ -122,6 +122,6 @@ This project is part of an AI Capstone project.
 - Ensure data files are present before running the dashboard
 
 ## Demo
-You can view the live interactive dashboard here: [Live Streamlit App]https://pseibinary.streamlit.app/
+You can view the live interactive dashboard here: [Live Streamlit App](https://pseibinary.streamlit.app/)
 
 
